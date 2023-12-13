@@ -2,7 +2,7 @@ package FraudDetector2;
 
 class Transaction {
     public Trader trader;
-    public  int amount;
+    public int amount;
 
     public Transaction(Trader trader, int amount) {
         this.trader = trader;

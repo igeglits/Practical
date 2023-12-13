@@ -1,8 +1,10 @@
 package FraudDetector2;
 
-class FraudDetector {
+class FraudRule1 implements FraudRule {
+
+    @Override
     public boolean isFraud(Transaction transaction) {
-        Trader trader = transaction.getTrader();
+        Trader trader=transaction.getTrader();
         return trader.getName().equals("Pokemon");
     }
 }
