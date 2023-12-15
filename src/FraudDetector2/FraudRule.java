@@ -1,5 +1,7 @@
 package FraudDetector2;
 
-interface FraudRule {
-    boolean isFraud(Transaction transaction);
+abstract class FraudRule {
+    abstract boolean isFraud(Transaction transaction);
+    abstract String ruleName();
 }
+
