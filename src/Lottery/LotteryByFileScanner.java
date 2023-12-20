@@ -1,10 +1,11 @@
+package Lottery;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class LotteryByFileScanner {
 
     public static void main(String[] args) {
         // Создаем 3 группы по 8 массивов размером 5
@@ -24,7 +25,7 @@ public class Main {
         // Заполняем массивы числами из файла с помощью метода readNumbersFromFile
         try {
             // Создаем объект File для нашего файла
-            File file = new File("C:\\Users\\igegl\\Documents\\Toshchakov, Igor\\lottery.xlsx");
+            File file = new File("C:\\Users\\igegl\\Documents\\Toshchakov, Igor\\lottery.xls");
 
             // Создаем объект FileInputStream для чтения байтов из файла
             FileInputStream fis = new FileInputStream(file);
@@ -196,7 +197,7 @@ public class Main {
         Scanner sc = new Scanner(line);
 
         // Устанавливаем разделитель для Scanner в запятую
-        sc.useDelimiter(",");
+        //sc.useDelimiter(",");
 
         // Читаем числа из строки, пока они есть и пока счетчик меньше пяти
         while (sc.hasNextInt() && count < 5) {

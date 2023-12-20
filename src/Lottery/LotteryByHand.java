@@ -1,10 +1,8 @@
+package Lottery;
+
 import java.util.Arrays;
 
-
-import java.util.Random;
-
-class Lottery {
-
+public class LotteryByHand {
     public static void main(String[] args) {
         // Создаем 3 группы по 8 массивов размером 5
         int[][][] groups = new int[3][8][5];
@@ -20,19 +18,45 @@ class Lottery {
             }
         }
 
-        // Заполняем массивы случайными числами от 1 до 35, оставляя первый массив в группе "первый Раунд" пустым
-        Random random = new Random();
+        // Заполняем массивы данными вручную
+        // Группа "первый Раунд"
+        groups[0][0] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 1
+        groups[0][1] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 2
+        groups[0][2] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 3
+        groups[0][3] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 4
+        groups[0][4] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 5
+        groups[0][5] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 6
+        groups[0][6] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 7
+        groups[0][7] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 8
+
+        // Группа "второй Раунд"
+        groups[1][0] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 1
+        groups[1][1] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 2
+        groups[1][2] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 3
+        groups[1][3] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 4
+        groups[1][4] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 5
+        groups[1][5] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 6
+        groups[1][6] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 7
+        groups[1][7] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 8
+
+        // Группа "третий Раунд"
+        groups[2][0] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 1
+        groups[2][1] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 2
+        groups[2][2] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 3
+        groups[2][3] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 4
+        groups[2][4] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 5
+        groups[2][5] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 6
+        groups[2][6] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 7
+        groups[2][7] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 8
+
+        // Выводим на консоль все массивы с их названиями
+        System.out.println("Все массивы:");
         for (int i = 0; i < 3; i++) {
+            System.out.println("Группа " + groupNames[i] + ":");
             for (int j = 0; j < 8; j++) {
-                if (i == 0 && j == 0) {
-                    continue; // Пропускаем первый массив в группе "первый Раунд"
-                }
-                for (int k = 0; k < 5; k++) {
-                    groups[i][j][k] = random.nextInt(35) + 1; // Генерируем случайное число от 1 до 35
-                }
+                System.out.println(arrayNames[i][j] + ": " + Arrays.toString(groups[i][j]));
             }
         }
-
         // Выводим на консоль все массивы с их названиями
         System.out.println("Все массивы:");
         for (int i = 0; i < 3; i++) {
@@ -177,3 +201,4 @@ class Lottery {
         System.out.println("Уникальные из третьего Раунда: " + Arrays.toString(Arrays.copyOf(unique3, unique3Count)));
     }
 }
+
