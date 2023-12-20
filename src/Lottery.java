@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 import java.util.Random;
 
-public class Main {
+class Lottery {
 
     public static void main(String[] args) {
         // Создаем 3 группы по 8 массивов размером 5
