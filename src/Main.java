@@ -47,10 +47,10 @@ public class Main {
                 String line = sc.nextLine();
 
                 // Вызываем метод readNumbersFromFile, который возвращает массив из пяти чисел
-                int[] numbers = groups[groupIndex][arrayIndex];
+                int[] numbers = readNumbersFromFile(line);
 
                 // Помещаем массив чисел в соответствующий массив в группе
-               // groups[groupIndex][arrayIndex] = numbers;
+                groups[groupIndex][arrayIndex] = numbers;
 
                 // Уменьшаем индекс массива на 1
                 arrayIndex--;
@@ -59,7 +59,9 @@ public class Main {
                 if (arrayIndex < 0) {
                     // Уменьшаем индекс группы на 1
                     groupIndex--;
-
+                    if (groupIndex < 0) {
+                        break;
+                    }
                     // Сбрасываем индекс массива на 7
                     arrayIndex = 7;
                 }
@@ -180,6 +182,45 @@ public class Main {
         System.out.println("В группе \"первый Раунд\" есть " + singlesCount + " \"одиночек\", " + doublesCount + " \"двойек\" и " + triplesCount + " \"тройек\".");
         System.out.println("В группе \"второй Раунд\" есть " + matches2 + " совпадений с массивом \"уникальные\".");
         System.out.println("В группе \"третий Раунд\" есть " + matches3 + " совпадений с массивом \"уникальные\".");
+    }
+
+    // Метод readNumbersFromFile, который выбирает числа из строки и помещает их в массив
+    public static int[] readNumbersFromFile(String line) {
+        // Создаем массив для хранения пяти чисел
+        int[] numbers = new int[5];
+
+        // Создаем счетчик для хранения количества чисел
+        int count = 0;
+
+        // Создаем объект Scanner для чтения чисел из строки
+        Scanner sc = new Scanner(line);
+
+        // Устанавливаем разделитель для Scanner в запятую
+        sc.useDelimiter(",");
+
+        // Читаем числа из строки, пока они есть и пока счетчик меньше пяти
+        while (sc.hasNextInt() && count < 5) {
+            // Считываем число из строки
+            int number = sc.nextInt();
+
+            // Проверяем, что число в диапазоне от 1 до 35
+            if (number >= 1 && number <= 35) {
+                // Добавляем число в массив
+                numbers[count] = number;
+
+                // Увеличиваем счетчик на 1
+                count++;
+            }
+        }
+
+        // Закрываем Scanner
+        sc.close();
+
+        // Сортируем массив по возрастанию
+        Arrays.sort(numbers);
+
+        // Возвращаем массив
+        return numbers;
     }
 
 }
