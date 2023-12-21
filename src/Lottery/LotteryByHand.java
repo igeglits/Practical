@@ -20,43 +20,36 @@ public class LotteryByHand {
 
         // Заполняем массивы данными вручную
         // Группа "первый Раунд"
-        groups[0][0] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 1
-        groups[0][1] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 2
-        groups[0][2] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 3
-        groups[0][3] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 4
-        groups[0][4] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 5
-        groups[0][5] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 6
-        groups[0][6] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 7
-        groups[0][7] = new int[] {0, 0, 0, 0, 0}; // Первый Раунд 8
+        groups[0][0] = new int[]{0, 0, 0, 0, 0}; // Первый Раунд 1
+        groups[0][1] = new int[]{4, 18, 23, 24, 35}; // Первый Раунд 2
+        groups[0][2] = new int[]{21, 24, 25, 29, 35}; // Первый Раунд 3
+        groups[0][3] = new int[]{1, 19, 27, 28, 33}; // Первый Раунд 4
+        groups[0][4] = new int[]{2, 3, 20, 23, 32}; // Первый Раунд 5
+        groups[0][5] = new int[]{2, 4, 11, 32, 34}; // Первый Раунд 6
+        groups[0][6] = new int[]{3, 7, 12, 28, 30}; // Первый Раунд 7
+        groups[0][7] = new int[]{16, 26, 29, 31, 32}; // Первый Раунд 8
 
         // Группа "второй Раунд"
-        groups[1][0] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 1
-        groups[1][1] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 2
-        groups[1][2] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 3
-        groups[1][3] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 4
-        groups[1][4] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 5
-        groups[1][5] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 6
-        groups[1][6] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 7
-        groups[1][7] = new int[] {0, 0, 0, 0, 0}; // Второй Раунд 8
+        groups[1][0] = new int[]{3, 12, 19, 20, 23}; // Второй Раунд 1
+        groups[1][1] = new int[]{1, 26, 27, 28, 31}; // Второй Раунд 2
+        groups[1][2] = new int[]{3, 4, 11, 16, 35}; // Второй Раунд 3
+        groups[1][3] = new int[]{1, 8, 9, 10, 26}; // Второй Раунд 4
+        groups[1][4] = new int[]{7, 19, 22, 28, 35}; // Второй Раунд 5
+        groups[1][5] = new int[]{16, 18, 24, 29, 34}; // Второй Раунд 6
+        groups[1][6] = new int[]{2, 6, 8, 19, 32}; // Второй Раунд 7
+        groups[1][7] = new int[]{16, 19, 27, 29, 33}; // Второй Раунд 8
 
         // Группа "третий Раунд"
-        groups[2][0] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 1
-        groups[2][1] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 2
-        groups[2][2] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 3
-        groups[2][3] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 4
-        groups[2][4] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 5
-        groups[2][5] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 6
-        groups[2][6] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 7
-        groups[2][7] = new int[] {0, 0, 0, 0, 0}; // Третий Раунд 8
+        groups[2][0] = new int[]{22, 29, 30, 31, 35}; // Третий Раунд 1
+        groups[2][1] = new int[]{15, 18, 22, 27, 31}; // Третий Раунд 2
+        groups[2][2] = new int[]{5, 21, 22, 31, 32}; // Третий Раунд 3
+        groups[2][3] = new int[]{11, 12, 17, 23, 32}; // Третий Раунд 4
+        groups[2][4] = new int[]{3, 11, 23, 26, 28}; // Третий Раунд 5
+        groups[2][5] = new int[]{5, 13, 14, 25, 26}; // Третий Раунд 6
+        groups[2][6] = new int[]{5, 6, 11, 33, 35}; // Третий Раунд 7
+        groups[2][7] = new int[]{12, 17, 25, 28, 34}; // Третий Раунд 8
 
-        // Выводим на консоль все массивы с их названиями
-        System.out.println("Все массивы:");
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Группа " + groupNames[i] + ":");
-            for (int j = 0; j < 8; j++) {
-                System.out.println(arrayNames[i][j] + ": " + Arrays.toString(groups[i][j]));
-            }
-        }
+
         // Выводим на консоль все массивы с их названиями
         System.out.println("Все массивы:");
         for (int i = 0; i < 3; i++) {
@@ -93,18 +86,18 @@ public class LotteryByHand {
                 singles[singlesCount] = i; // Добавляем число в массив "одиночек"
                 singlesCount++; // Увеличиваем счетчик "одиночек" на 1
             } else if (freq == 2) { // Если частота равна 2, то это "двойка"
-                doubles[doublesCount] = i; // Добавляем число в массив "двойек"
-                doublesCount++; // Увеличиваем счетчик "двойек" на 1
+                doubles[doublesCount] = i; // Добавляем число в массив "двоек"
+                doublesCount++; // Увеличиваем счетчик "двоек" на 1
             } else if (freq >= 3) { // Если частота больше или равна 3, то это "тройка"
-                triples[triplesCount] = i; // Добавляем число в массив "тройек"
-                triplesCount++; // Увеличиваем счетчик "тройек" на 1
+                triples[triplesCount] = i; // Добавляем число в массив "троек"
+                triplesCount++; // Увеличиваем счетчик "троек" на 1
             }
         }
 
         // Выводим на консоль массивы "одиночек", "двойек" и "тройек"
-        System.out.println("Одиночки: " + Arrays.toString(Arrays.copyOf(singles, singlesCount)));
-        System.out.println("Двойки: " + Arrays.toString(Arrays.copyOf(doubles, doublesCount)));
-        System.out.println("Тройки: " + Arrays.toString(Arrays.copyOf(triples, triplesCount)));
+        System.out.println("Одиночки: " + Arrays.toString(Arrays.copyOf(singles, singlesCount)) +'\n'+ " колличество="+ singlesCount);
+        System.out.println("Двойки: " + Arrays.toString(Arrays.copyOf(doubles, doublesCount))+'\n'+ " колличество="+ doublesCount);
+        System.out.println("Тройки: " + Arrays.toString(Arrays.copyOf(triples, triplesCount))+'\n'+ " колличество="+ triplesCount);
 
         // Числа от 1 до 35, которые не представлены в семи массивах группы "первый Раунд" сложить в новый массив "уникальные"
         int[] unique = new int[35]; // Массив для "уникальных" чисел
@@ -120,7 +113,7 @@ public class LotteryByHand {
         }
 
         // Выводим на консоль массив "уникальных" чисел
-        System.out.println("Уникальные: " + Arrays.toString(Arrays.copyOf(unique, uniqueCount)));
+        System.out.println("Уникальные: " + Arrays.toString(Arrays.copyOf(unique, uniqueCount))+'\n'+ " колличество="+ uniqueCount);
 
         // Числа из массива "уникальные" сравнить с числами в массивах из группы "второй Раунд" и вывести количество совпадений на консоль
         int matches2 = 0; // Счетчик для совпадений с группой "второй Раунд"
