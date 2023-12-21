@@ -1,7 +1,9 @@
+package OverrideEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 
-// Создаем абстрактный класс Shape с полем name и методом equals
+// Создаем абстрактный класс OverrideEquals.Shape с полем name и методом equals
 abstract class Shape {
     protected String name;
 
@@ -22,7 +24,7 @@ abstract class Shape {
     public abstract double area();
 }
 
-// Создаем подкласс Circle, который наследует от Shape
+// Создаем подкласс OverrideEquals.Circle, который наследует от OverrideEquals.Shape
 class Circle extends Shape {
     private double radius;
 
@@ -37,7 +39,7 @@ class Circle extends Shape {
     }
 }
 
-// Создаем подкласс Square, который наследует от Shape
+// Создаем подкласс OverrideEquals.Square, который наследует от OverrideEquals.Shape
 class Square extends Shape {
     private double side;
 
@@ -52,7 +54,7 @@ class Square extends Shape {
     }
 }
 
-// Создаем подкласс Rectangle, который наследует от Shape
+// Создаем подкласс OverrideEquals.Rectangle, который наследует от OverrideEquals.Shape
 class Rectangle extends Shape {
     private double sideA;
     private double sideB;

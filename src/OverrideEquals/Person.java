@@ -1,3 +1,4 @@
+package OverrideEquals;
 
 class Person {
     private String name;
