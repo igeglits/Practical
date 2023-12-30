@@ -1,5 +1,5 @@
-
-// Интерфейс для критериев поиска яблок
+import java.util.ArrayList;
+import java.util.List;// Интерфейс для критериев поиска яблок
 interface InterfaceAppleSearchCriteria {
     // Абстрактный метод, который проверяет, подходит ли яблоко по критерию
     boolean test(Apple apple);
@@ -72,5 +72,31 @@ class LightInterfaceAppleCriteria implements InterfaceAppleSearchCriteria {
     public boolean test(Apple apple) {
         // Возвращает true, если вес яблока меньше 150 грамм
         return apple.getWeight() < 150;
+    }
+}
+
+// Класс для представления склада яблок
+class AppleWarehouse {
+    // Поле для хранения списка яблок на складе
+    private List<Apple> apples;
+
+    // Конструктор с параметром
+    public AppleWarehouse(List<Apple> apples) {
+        this.apples = apples;
+    }
+
+    // Метод для поиска яблок по критерию
+    public List<Apple> findApples(InterfaceAppleSearchCriteria searchCriteria) {
+        // Создаем пустой список для результата
+        List<Apple> result = new ArrayList<>();
+        // Проходим по всем яблокам на складе
+        for (Apple apple : apples) {
+            // Если яблоко подходит по критерию, добавляем его в результат
+            if (searchCriteria.test(apple)) {
+                result.add(apple);
+            }
+        }
+        // Возвращаем результат
+        return result;
     }
 }
