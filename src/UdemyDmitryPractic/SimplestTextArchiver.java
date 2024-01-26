@@ -39,12 +39,19 @@ public class SimplestTextArchiver {
 
     private static String unzip(String zipped) {
         StringBuilder unzipBuilder = new StringBuilder();
-
-        for (int i = 0; i < zipped.length() - 1; i = i + 2)
-            for (int j = 0; j == zipped.charAt(i + 1); j++) {
-                unzipBuilder.append(zipped.charAt(i));
+        StringBuilder count = new StringBuilder();
+        char ch = zipped.charAt(0);
+        var b = 1;
+        for (int i = b; i < zipped.length()-1; i++) {
+            if (Character.isDigit(zipped.charAt(i))) {
+                count.append(zipped.charAt(i));
             }
-
+            int repeatTime = Integer.parseInt(String.valueOf(count));
+            unzipBuilder.append(String.valueOf(ch).repeat(Math.max(0, repeatTime)));
+            ch = zipped.charAt(++i);
+            count.setLength(0);
+            b = i;
+        }
         return unzipBuilder.toString();
     }
 }
