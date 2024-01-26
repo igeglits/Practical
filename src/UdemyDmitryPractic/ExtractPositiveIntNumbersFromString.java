@@ -1,7 +1,6 @@
 package UdemyDmitryPractic;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 class ExtractPositiveIntNumbersFromString {
     public static void main(String[] args) {
@@ -22,7 +21,7 @@ class ExtractPositiveIntNumbersFromString {
             var c = charArray[i];
             if (Character.isDigit(c)) {
                 numberBuilder.append(c);
-            } else if (!numberBuilder.isEmpty()){
+            } else if (!numberBuilder.isEmpty()) {
                 numbers[count++] = Integer.parseInt(numberBuilder.toString());
                 numberBuilder.setLength(0);
             }
@@ -34,14 +33,14 @@ class ExtractPositiveIntNumbersFromString {
 /*return Arrays.stream(numbers)
         .map(numbers::)
         .collect(Collectors.toList());*/
-      return trimArray(numbers, count);
+        return trimArray(numbers, count);
 
     }
 
     private static int[] trimArray(int[] array, int count) {
-int[] result = new int[count];
+        int[] result = new int[count];
         for (int i = 0; i < count; i++) {
-            result[i]=array[i];
+            result[i] = array[i];
         }
         return result;
     }
