@@ -4,7 +4,7 @@ public class SimplestTextArchiver {
 
     public static void main(String[] args) {
         // read source data
-        String source = "A".repeat(8) + "B".repeat(3) + "C".repeat(5) + "E";
+        String source = "A".repeat(1) + "B".repeat(3) + "C".repeat(25) + "E".repeat(15);
         System.out.println("Source text:   " + source);
 
         // processing
@@ -41,17 +41,21 @@ public class SimplestTextArchiver {
         StringBuilder unzipBuilder = new StringBuilder();
         StringBuilder count = new StringBuilder();
         char ch = zipped.charAt(0);
-        var b = 1;
-        for (int i = b; i < zipped.length()-1; i++) {
-            if (Character.isDigit(zipped.charAt(i))) {
+        var repeatTime = 0;
+        for (int i = 0; i < zipped.length(); i++) {
+            if (!Character.isDigit(zipped.charAt(i)) && count.isEmpty()) {
+                ch = zipped.charAt(i);
+            } else if (Character.isDigit(zipped.charAt(i))) {
                 count.append(zipped.charAt(i));
+            } else if (!Character.isDigit(zipped.charAt(i)) && !count.isEmpty()){
+                repeatTime = Integer.parseInt(String.valueOf(count));
+                unzipBuilder.append(String.valueOf(ch).repeat(Math.max(0, repeatTime)));
+                count.setLength(0);
+                ch = zipped.charAt(i);
             }
-            int repeatTime = Integer.parseInt(String.valueOf(count));
-            unzipBuilder.append(String.valueOf(ch).repeat(Math.max(0, repeatTime)));
-            ch = zipped.charAt(++i);
-            count.setLength(0);
-            b = i;
         }
+        repeatTime = Integer.parseInt(String.valueOf(count));
+        unzipBuilder.append(String.valueOf(ch).repeat(Math.max(0, repeatTime)));
         return unzipBuilder.toString();
     }
 }
