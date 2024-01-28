@@ -23,7 +23,6 @@ class PrintArrayElementsMoreThanAvg {
                 moreThanAverage[count] = element;
                 count++;
             }
-
         }
         return trimArray(moreThanAverage, count);
     }
