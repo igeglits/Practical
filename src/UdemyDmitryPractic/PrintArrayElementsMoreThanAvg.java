@@ -12,7 +12,11 @@ class PrintArrayElementsMoreThanAvg {
         System.out.println(average);
         int[] moreThanAverage = findMoreThanAverage(array, average);
         Arrays.sort(moreThanAverage);
+        var min = Arrays.stream(moreThanAverage).min();
+        var max = Arrays.stream(moreThanAverage).max();
         System.out.println(Arrays.toString(moreThanAverage));
+        System.out.println("Минимальное значение " + min);
+        System.out.println("Максимальное значение " + max);
     }
 
     private static int[] findMoreThanAverage(int[] array, int average) {
