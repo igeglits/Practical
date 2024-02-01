@@ -12,7 +12,7 @@ class TryCatchIntro {
 
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Был пойман exeption " + e);
-        } finally {System.out.println("Good Day");
+        } finally {System.out.println("Good Day, finally всегда срабатывает");
         }
     }
 }
