@@ -1,7 +1,5 @@
 package homework_15_exception.level_2_intern;
 
-import homework_15_exception.level_2_intern.BankClient;
-
 import java.util.ArrayList;
 import java.util.List;
 class BankApiImplTest {
@@ -16,7 +14,7 @@ class BankApiImplTest {
         List<BankClient> clients = new ArrayList();
         clients.add(0, client);
         clients.add(1, client2);
-        BankApi api = new BankApiImpl(clients);
+        BankApi bankApi = new BankApiImpl(clients);
 
         List<Role> roles = new ArrayList();
         roles.add(0, Role.CAN_SEARCH_CLIENTS);
@@ -25,7 +23,7 @@ class BankApiImplTest {
 
 
         try {
-            api.findByUid(credentials, "1234");
+            bankApi.findByUid(credentials, "1234");
             System.out.println("TEST FAIL"); // потому что если мы дошли до этой строки,
             // значит что метод findByUid() не кинул ошибку, а он был должен сделать это
             // так как в credentials нет нужной роли

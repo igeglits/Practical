@@ -17,7 +17,7 @@ class BankApiImpl implements BankApi {
 
     @Override
     public Optional<BankClient> findByUid(UserCredentials credentials,
-                                                                                                                            String uid) throws NoRoleCanSearchClient {
+                                          String uid) throws NoRoleCanSearchClient {
         if (!credentials.hasRole(credentials, CAN_SEARCH_CLIENTS)) {
             throw new NoRoleCanSearchClient("Access denied because no role - Can Search Clients");
         } else {
