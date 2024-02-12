@@ -4,11 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ProductValidatorImpl implements ProductValidator {
-    private ProductTitleValidationRule titleValidationRule;
+    private final ProductTitleValidationRule titleValidationRule;
+    private final ProductPriceValidationRule priceValidationRule;
+    private final ProductDescriptionValidationRule productDescriptionValidationRule;
+
     //это правило валидации, которое будет использоваться
     // для проверки названия продукта.
-    public ProductValidatorImpl(ProductTitleValidationRule titleValidationRule) {
+    public ProductValidatorImpl(ProductTitleValidationRule titleValidationRule,
+                                ProductPriceValidationRule priceValidationRule,
+                                ProductDescriptionValidationRule productDescriptionValidationRule) {
         this.titleValidationRule = titleValidationRule;
+        this.priceValidationRule = priceValidationRule;
+        this.productDescriptionValidationRule = productDescriptionValidationRule;
     }
     /*
     Это конструктор класса ProductValidatorImpl, который принимает
@@ -21,6 +28,16 @@ class ProductValidatorImpl implements ProductValidator {
         List<ValidationException> exceptions = new ArrayList<>();
         try {
             titleValidationRule.validate(product);
+        } catch (ValidationException e) {
+            exceptions.add(e);
+        }
+        try {
+            priceValidationRule.validate(product);
+        } catch (ValidationException e) {
+            exceptions.add(e);
+        }
+        try {
+            productDescriptionValidationRule.validate(product);
         } catch (ValidationException e) {
             exceptions.add(e);
         }
