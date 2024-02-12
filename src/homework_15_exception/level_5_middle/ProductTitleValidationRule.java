@@ -1,6 +1,6 @@
 package homework_15_exception.level_5_middle;
 
-class ProductTitleValidationRule implements FieldValidationRule {
+class ProductTitleValidationRule implements ProductValidationRule {
     @Override
     public void validate(Product product) throws ValidationException {
         if (product.getName() == null || product.getName().isEmpty()) {

@@ -2,7 +2,7 @@ package homework_15_exception.level_5_middle;
 
 import java.math.BigDecimal;
 
-class ProductPriceValidationRule implements FieldValidationRule {
+class ProductPriceValidationRule implements ProductValidationRule {
     @Override
     public void validate(Product product) throws ValidationException {
         if (product.getPrice() == null) {

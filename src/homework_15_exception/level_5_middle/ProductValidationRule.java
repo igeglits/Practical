@@ -1,5 +1,5 @@
 package homework_15_exception.level_5_middle;
 
-interface FieldValidationRule {
+interface ProductValidationRule {
     void validate(Product product) throws ValidationException;
 }

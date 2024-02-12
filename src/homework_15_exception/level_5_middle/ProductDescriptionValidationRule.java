@@ -1,6 +1,6 @@
 package homework_15_exception.level_5_middle;
 
-class ProductDescriptionValidationRule implements FieldValidationRule {
+class ProductDescriptionValidationRule implements ProductValidationRule {
     @Override
     public void validate(Product product) throws ValidationException {
         if (product.getDescription().length() > 2000) {
