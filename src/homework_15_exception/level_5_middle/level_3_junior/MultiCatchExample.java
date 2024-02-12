@@ -1,4 +1,4 @@
-package homework_15_exception.level_3_junior;
+package homework_15_exception.level_5_middle.level_3_junior;
 
 class MultiCatchExample {
     public static void main(String[] args) {

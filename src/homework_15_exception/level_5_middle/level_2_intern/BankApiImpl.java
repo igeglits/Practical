@@ -1,11 +1,11 @@
-package homework_15_exception.level_2_intern;
+package homework_15_exception.level_5_middle.level_2_intern;
 
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import static homework_15_exception.level_2_intern.Role.CAN_SEARCH_CLIENTS;
+import static homework_15_exception.level_5_middle.level_2_intern.Role.CAN_SEARCH_CLIENTS;
 
 
 class BankApiImpl implements BankApi {
