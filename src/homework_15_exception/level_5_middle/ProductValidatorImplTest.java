@@ -77,9 +77,8 @@ class ProductValidatorImplTest {
     }
 
 
-
     void RULE_5() {
-        Product product = new Product("Milk",  null, "Milk from cow");
+        Product product = new Product("Milk", null, "Milk from cow");
         List<ValidationException> validationExceptions = productValidator.validate(product);
         checkResult(validationExceptions.size() == 1, "RULE_5");
         checkResult(validationExceptions.get(0).getRuleName().equals("RULE_5"), "RULE_5");
@@ -98,15 +97,15 @@ class ProductValidatorImplTest {
         printException(validationExceptions);
     }
 
-   /* void RULE_7() {
-        Product product = new Product("Milk", new BigDecimal("10.00"), "Milk from cow");
-        List<ValidationException> validationExceptions = productValidator.validate(product);
-        checkResult(validationExceptions.size() == 1, "RULE_7");
-        checkResult(validationExceptions.get(0).getRuleName().equals("RULE_7"), "RULE_7");
-        checkResult(validationExceptions.get(0).getFieldName().equals("price"), "RULE_7");
-        checkResult(validationExceptions.get(0).getDescription().equals("Price can be only in XX.YY format"), "RULE_7");
-        printException(validationExceptions);
-    }*/
+    /* void RULE_7() {
+         Product product = new Product("Milk", new BigDecimal("10.00"), "Milk from cow");
+         List<ValidationException> validationExceptions = productValidator.validate(product);
+         checkResult(validationExceptions.size() == 1, "RULE_7");
+         checkResult(validationExceptions.get(0).getRuleName().equals("RULE_7"), "RULE_7");
+         checkResult(validationExceptions.get(0).getFieldName().equals("price"), "RULE_7");
+         checkResult(validationExceptions.get(0).getDescription().equals("Price can be only in XX.YY format"), "RULE_7");
+         printException(validationExceptions);
+     }*/
     void RULE_8() {
         Product product = new Product("Milk", new BigDecimal("10.00"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \" +\n" +
                 "                \"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \" +\n" +
@@ -140,16 +139,18 @@ class ProductValidatorImplTest {
         printException(validationExceptions);
 
     }
+
     void RULE_9() {
         Product product = new Product("Milk", new BigDecimal("10.00"), "Milk%from%cow");
         List<ValidationException> validationExceptions = productValidator.validate(product);
         checkResult(validationExceptions.size() == 1, "RULE_9");
-        checkResult(validationExceptions.get(0).getRuleName().equals("RULE_9"), "RULE_9");
-        checkResult(validationExceptions.get(0).getFieldName().equals("description"), "RULE_9");
-        checkResult(validationExceptions.get(0).getDescription().equals("Description can contain only letters, digits, spaces, commas, dots and hyphens"), "RULE_9");
+        checkResult(validationExceptions.stream().anyMatch(s -> s.getRuleName().equals("RULE_9")), "RULE_9");
+        checkResult(validationExceptions.stream().anyMatch(s -> s.getFieldName().equals("description")), "RULE_9");
+        checkResult(validationExceptions.stream().anyMatch(s -> s.getDescription().equals("Description can contain only letters, digits, spaces, commas, dots and hyphens")), "RULE_9");
         printException(validationExceptions);
     }
-    void RULE_10(){
+
+    void RULE_10() {
         Product product = new Product(null, new BigDecimal(-1.00), "Milk@from@cow");
         List<ValidationException> validationExceptions = productValidator.validate(product);
         checkResult(validationExceptions.size() == 3, "RULE_10");
@@ -166,6 +167,7 @@ class ProductValidatorImplTest {
             System.out.println(testName + " has failed");
         }
     }
+
     private static void printException(List<ValidationException> validationExceptions) {
         for (ValidationException validationException : validationExceptions) {
             System.out.printf("Rule name: %s, Description: %s, Field name: %s%n",
