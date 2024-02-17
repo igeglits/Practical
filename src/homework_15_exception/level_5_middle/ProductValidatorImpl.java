@@ -4,25 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ProductValidatorImpl implements ProductValidator {
-    /* private final ProductTitleValidationRule titleValidationRule;
-     private final ProductPriceValidationRule priceValidationRule;
-     private final ProductDescriptionValidationRule productDescriptionValidationRule;
 
-     //это правило валидации, которое будет использоваться
-     // для проверки названия продукта.
-      public ProductValidatorImpl(ProductTitleValidationRule titleValidationRule,
-                                 ProductPriceValidationRule priceValidationRule,
-                                 ProductDescriptionValidationRule productDescriptionValidationRule) {
-         this.titleValidationRule = titleValidationRule;
-         this.priceValidationRule = priceValidationRule;
-         this.productDescriptionValidationRule = productDescriptionValidationRule;
-     }
-
-     Это конструктор класса ProductValidatorImpl, который принимает
-     объект типа ProductTitleValidationRule в качестве аргумента и
-     сохраняет его в поле titleValidationRule. Это позволяет внедрить
-     правило валидации в экземпляр класса ProductValidatorImpl.
-      */
     private final List<ProductValidationRule> validationRules = new ArrayList<>();
 
     public ProductValidatorImpl(ProductTitleValidationRule titleValidationRule,
@@ -47,7 +29,25 @@ class ProductValidatorImpl implements ProductValidator {
         return exceptions;
     }
 }
+/* private final ProductTitleValidationRule titleValidationRule;
+     private final ProductPriceValidationRule priceValidationRule;
+     private final ProductDescriptionValidationRule productDescriptionValidationRule;
 
+     //это правило валидации, которое будет использоваться
+     // для проверки названия продукта.
+      public ProductValidatorImpl(ProductTitleValidationRule titleValidationRule,
+                                 ProductPriceValidationRule priceValidationRule,
+                                 ProductDescriptionValidationRule productDescriptionValidationRule) {
+         this.titleValidationRule = titleValidationRule;
+         this.priceValidationRule = priceValidationRule;
+         this.productDescriptionValidationRule = productDescriptionValidationRule;
+     }
+
+     Это конструктор класса ProductValidatorImpl, который принимает
+     объект типа ProductTitleValidationRule в качестве аргумента и
+     сохраняет его в поле titleValidationRule. Это позволяет внедрить
+     правило валидации в экземпляр класса ProductValidatorImpl.
+      */
 
 
 
