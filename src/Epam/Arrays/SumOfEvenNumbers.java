@@ -1,4 +1,4 @@
-package Epam;
+package Epam.Arrays;
 
 class SumOfEvenNumbers {
     public static int sumOfEvenNumbers(int[] array) {

@@ -1,4 +1,4 @@
-package Epam;
+package Epam.Arrays;
 
 class SumOfPrevious {
     public static boolean[] getSumCheckArray(int[] array) {

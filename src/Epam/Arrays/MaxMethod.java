@@ -1,4 +1,4 @@
-package Epam;
+package Epam.Arrays;
 
 
     public class MaxMethod {
