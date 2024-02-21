@@ -6,6 +6,7 @@ class TransposeMatrix {
         System.out.println("columns = " + columns);
         int rows = matrix[0].length;//количество строк
         System.out.println("rows = " + rows);
+
         int[][] result = new int[rows][columns];
         for (int i = 0; i < rows; i++){
             for (int j = 0; j < columns; j++){
