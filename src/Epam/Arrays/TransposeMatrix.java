@@ -1,7 +1,7 @@
 package Epam.Arrays;
 
 class TransposeMatrix {
-    public static int[][] multiply(int[][] matrix){
+    public static int[][] transpose(int[][] matrix){
         int columns = matrix.length;//количество столбцов
         System.out.println("columns = " + columns);
         int rows = matrix[0].length;//количество строк
@@ -36,7 +36,7 @@ class TransposeMatrix {
         }
         TransposeMatrix transposeMatrix = new TransposeMatrix();
         transposeMatrix.printMatrix(matrix);
-        int[][] result = multiply(matrix);
+        int[][] result = transpose(matrix);
         transposeMatrix.printMatrix(result);
     }
 }
