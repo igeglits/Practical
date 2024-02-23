@@ -9,8 +9,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] test = {1, 5, 3, 19, 23, 89, 74, 9};
-        /*Arrays.stream(test)
-                        .sorted().toArray();*/
+        Arrays.stream(test).sorted().toArray();
         sort(test);
         out.println(Arrays.toString(test));
         out.println();
