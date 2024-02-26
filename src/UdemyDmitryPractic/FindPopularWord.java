@@ -8,7 +8,7 @@ class FindPopularWord {
 
 
     public static void main(String[] args) {
-        String text = "I am a student and I am learning Java. Java is a popular programming language. Java is used in many applications.";
+        String text = "Java is a a programming language. Java is a a platform. Java is an a Island. Java is a java";
         FindPopularWord findPopularWord = new FindPopularWord();
         findPopularWord.countWordRepeat(text);
     }
@@ -16,6 +16,10 @@ class FindPopularWord {
 
     private void countWordRepeat(String text) {
         List<CountedWords> list = new ArrayList<>();
+        if (text.isEmpty()) {
+            System.out.println("Text is empty");
+           return;
+        }
         String[] words = splitStringToArray(text);
 
         int counters = 1;
@@ -28,20 +32,22 @@ class FindPopularWord {
 
         }
         addToListCountedWords(list, counters, words[0]);
-        counters = 1;
+        counters = 0;
 
         for (int i = 1; i < words.length; i++) {
             String s = words[i];
-            for (var list1 : list) {
+            for (int j = 0; j < list.size(); j++) {
+                var list1 = list.get(j);
                 if (!s.equalsIgnoreCase(list1.getWord())) {
                     for (String word : words) {
                         if (s.equalsIgnoreCase(word)) {
                             counters++;
                         }
                     }
+                    addToListCountedWords(list, counters, s);
+                    counters = 0;
                 }
-                addToListCountedWords(list, counters, s);
-                counters = 1;
+
             }
         }
         getAndPrintPopularWord(list);
