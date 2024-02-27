@@ -16,10 +16,8 @@ class FindPopularWord {
 
     private void countWordRepeat(String text) {
         List<CountedWords> list = new ArrayList<>();
-        if (text.isEmpty()) {
-            System.out.println("Text is empty");
-           return;
-        }
+        if (checkTextForEmpty(text)) return;
+
         String[] words = splitStringToArray(text);
 
         int counters = 1;
@@ -39,7 +37,8 @@ class FindPopularWord {
             for (int j = 0; j < list.size(); j++) {
                 var list1 = list.get(j);
                 if (!s.equalsIgnoreCase(list1.getWord())) {
-                    for (String word : words) {
+                    for (int k = i; k < words.length; k++) {
+                        String word = words[k];
                         if (s.equalsIgnoreCase(word)) {
                             counters++;
                         }
@@ -51,6 +50,14 @@ class FindPopularWord {
             }
         }
         getAndPrintPopularWord(list);
+    }
+
+    private boolean checkTextForEmpty(String text) {
+        if (text.isEmpty()) {
+            System.out.println("Text is empty");
+            return true;
+        }
+        return false;
     }
 
     private String[] splitStringToArray(String text) {
