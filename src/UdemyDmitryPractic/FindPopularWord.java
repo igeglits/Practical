@@ -8,7 +8,7 @@ class FindPopularWord {
 
 
     public static void main(String[] args) {
-        String text = "Java is a a programming language. Java is a a platform. Java is an a Island. Java is a java";
+        String text = "Java is a--- a programming language. Java is a      \t 345 a platform.б Java is an< a? Island. Java, is a java";
         FindPopularWord findPopularWord = new FindPopularWord();
         findPopularWord.countWordRepeat(text);
     }
@@ -61,7 +61,7 @@ class FindPopularWord {
     }
 
     private String[] splitStringToArray(String text) {
-        String[] words = text.split(" ");
+        String[] words = text.split("\\W+");
         return words;
     }
 
