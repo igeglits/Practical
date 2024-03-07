@@ -3,16 +3,22 @@ package lesson_16_multithreading.homework.coding;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class NotThreadSafeIdGenerator {
-    private int id;
+    private AtomicInteger id = new AtomicInteger(0);
+    ;
     private boolean even;
 
     public int getNextId() {
-        id++;
-        this.even = isEven(id);
-        return id;
+        // Увеличиваем значение счетчика ID на единицу и получаем новое значение
+        int newId = id.incrementAndGet();
+        // Вызываем метод isEven для проверки, является ли новый ID четным
+        this.even = isEven(newId);
+        // Возвращаем новый идентификатор
+        return newId;
     }
+
     public boolean isEven() {
         return this.even;
     }
@@ -29,7 +35,7 @@ class NotThreadSafeIdGenerator {
         System.out.printf("|  %s   |   %s    |%n", "ID", "Thread Name");
         for (int i = 0; i < 10; i++) {
             new Thread(() -> {
-                for (int j = 0; j < 1000; j++) {
+                for (int j = 0; j < 10000; j++) {
                     list.add(new IdAndThread(idGenerator.getNextId(), Thread.currentThread().getName()));
                 }
                 latch.countDown();
