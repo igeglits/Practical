@@ -10,8 +10,15 @@ class NotThreadSafeIdGenerator {
     ;
     private boolean even;
 
-    public int getNextId() {
+    /*The AtomicInteger class in Java provides a set of
+    atomic operations for integers, which are thread-safe.
+    However, the increment operation (++) and the method isEven(int)
+    cannot be applied directly to an AtomicInteger.*/
+    public synchronized int getNextId() {
         // Увеличиваем значение счетчика ID на единицу и получаем новое значение
+        //В Java класс AtomicInteger обеспечивает потокобезопасные операции инкремента, что означает,
+        // что даже если несколько потоков одновременно обращаются
+        // к этой переменной, она будет корректно обновляться.
         int newId = id.incrementAndGet();
         // Вызываем метод isEven для проверки, является ли новый ID четным
         this.even = isEven(newId);
@@ -19,7 +26,7 @@ class NotThreadSafeIdGenerator {
         return newId;
     }
 
-    public boolean isEven() {
+    public synchronized boolean isEven() {
         return this.even;
     }
 

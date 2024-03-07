@@ -15,11 +15,11 @@ class ThreadSafeAtomicIdGenerator {
         this.even = isEven(nextId);
         return nextId;
     }
-    public boolean isEven() {
+    public synchronized boolean isEven() {
         return this.even;
     }
 
-    private boolean isEven(int number) {
+    private synchronized boolean isEven(int number) {
         return number % 2 == 0;
     }
 
