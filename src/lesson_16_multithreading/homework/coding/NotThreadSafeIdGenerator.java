@@ -5,10 +5,20 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 
 class NotThreadSafeIdGenerator {
-    private int id = 0;
+    private int id;
+    private boolean even;
 
     public int getNextId() {
-        return id++;
+        id++;
+        this.even = isEven(id);
+        return id;
+    }
+    public boolean isEven() {
+        return this.even;
+    }
+
+    private boolean isEven(int number) {
+        return number % 2 == 0;
     }
 
     public static void main(String[] args) throws InterruptedException {
