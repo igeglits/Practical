@@ -14,7 +14,7 @@ public class MainThreadExample {
 
 	}
 
-	public static void a(String str) {
+	public static void a (String str) {
 		int abc = 8;
 		System.out.println(str);
 	}

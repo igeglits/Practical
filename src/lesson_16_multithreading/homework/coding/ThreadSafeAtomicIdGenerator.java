@@ -10,7 +10,7 @@ class ThreadSafeAtomicIdGenerator {
     private final AtomicInteger id = new AtomicInteger(0);
     private boolean even;
 
-    public int getNextId1() {
+    public int getNextId1() { // synchronized не нужен, т.к. используется AtomicInteger вместо int id
         int nextId = id.getAndIncrement();
         this.even = isEven(nextId);
         return nextId;
@@ -26,7 +26,7 @@ class ThreadSafeAtomicIdGenerator {
 
     public static void main(String[] args) throws InterruptedException {
         ThreadSafeAtomicIdGenerator idGenerator = new ThreadSafeAtomicIdGenerator();
-        List<IdAndThread> list = new CopyOnWriteArrayList<>();
+        List<IdAndThread> list = new CopyOnWriteArrayList<>();// потокобезопасный список для хранения данных о потоках и id потоков в них (id и имя потока) в многопоточной среде
         CountDownLatch latch = new CountDownLatch(10);
 
         System.out.printf("|  %s   |   %s    |%n", "ID", "Thread Name");

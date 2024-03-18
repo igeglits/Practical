@@ -34,7 +34,8 @@ class Main4 {
         },
         EMAIL {
             @Override
-            boolean isChannelEnabled(NotificationOptions options){return options.isEmailEnabled;}
+            boolean isChannelEnabled(NotificationOptions options){
+                return options.isEmailEnabled;}
             @Override
             void setChannelEnabled(NotificationOptions options, boolean isEnabled){
                 options.isEmailEnabled = isEnabled;

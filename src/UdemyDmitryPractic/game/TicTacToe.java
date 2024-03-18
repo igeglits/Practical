@@ -67,18 +67,30 @@ public class TicTacToe {
 
     private static void makeUserMove(char[][] gameTable) {
         System.out.printf("Enter your move: from 1 to 9%n");
-        int userMove = new Scanner(System.in).nextInt();
-        switch (userMove) {
-            case 1 -> gameTable[2][0] = 'X';
-            case 2 -> gameTable[2][1] = 'X';
-            case 3 -> gameTable[2][2] = 'X';
-            case 4 -> gameTable[1][0] = 'X';
-            case 5 -> gameTable[1][1] = 'X';
-            case 6 -> gameTable[1][2] = 'X';
-            case 7 -> gameTable[0][0] = 'X';
-            case 8 -> gameTable[0][1] = 'X';
-            case 9 -> gameTable[0][2] = 'X';
-            default -> makeComputerMove(gameTable);
+
+
+        try {
+            int userMove = new Scanner(System.in).nextInt();
+            if (userMove >= 1 && userMove <= 9) {
+                switch (userMove) {
+                    case 1 -> gameTable[2][0] = 'X';
+                    case 2 -> gameTable[2][1] = 'X';
+                    case 3 -> gameTable[2][2] = 'X';
+                    case 4 -> gameTable[1][0] = 'X';
+                    case 5 -> gameTable[1][1] = 'X';
+                    case 6 -> gameTable[1][2] = 'X';
+                    case 7 -> gameTable[0][0] = 'X';
+                    case 8 -> gameTable[0][1] = 'X';
+                    case 9 -> gameTable[0][2] = 'X';
+                    default -> makeComputerMove(gameTable);
+                }
+            }else {
+                System.out.println("Use only 1 to 9");
+                makeUserMove(gameTable);
+            }
+        } catch (Exception e) {
+            System.out.println("Use only 1 to 9");
+            makeUserMove(gameTable);
         }
     }
 

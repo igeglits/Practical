@@ -26,7 +26,7 @@ class MultiplyMatrix {
     public void printMatrix(int[][] matrix){
         for (int[] row : matrix){
             for (int value : row){
-                System.out.print(value + "\t");
+                System.out.printf("|  %d   |\t",value);
             }
             System.out.println();
         }
