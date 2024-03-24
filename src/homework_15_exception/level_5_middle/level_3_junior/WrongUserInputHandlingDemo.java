@@ -12,7 +12,7 @@ class WrongUserInputHandlingDemo {
         var charArray = scanner.toCharArray();
         for (char ch : charArray) {
             if (!isDigit(ch)) {
-                throw new WrongUserInputHandling("Enter only Integers");
+                throw new WrongUserInputHandling("Enter only Integers");// write your code here to throw exception if input is not a number
             }
         }
     }
@@ -29,7 +29,7 @@ class WrongUserInputHandlingDemo {
             checkInput(scanner);
         } catch (WrongUserInputHandling e) {
             System.out.println(e.getMessage());
-            readFromConsole();
+            return readFromConsole();
         }
         return scanner;
     }
@@ -39,5 +39,5 @@ class WrongUserInputHandlingDemo {
 class WrongUserInputHandling extends Exception {
     WrongUserInputHandling(String message) {
         super(message);
-    }
+    }// write your code here to override the method of Exception class to get the message passed to the constructor of this class and print it.
 }
