@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 class RandomNumberList {
     private List<Integer>  randomNumbers = Collections.synchronizedList(new ArrayList<>());
 /*T - это тип элементов в списке.
-new ArrayList<>() - создает новый экземпляр списка (в данном случае ArrayList),
+new arrayList<>() - создает новый экземпляр списка (в данном случае arrayList),
 который будет обернут в синхронизированный список.
 После этой строки кода synchronizedList будет синхронизированным списком,
 который можно использовать в многопоточной среде безопасно.*/

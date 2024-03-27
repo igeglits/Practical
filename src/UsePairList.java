@@ -1,4 +1,4 @@
-//import java.util.ArrayList;
+//import java.util.arrayList;
 //import java.util.Arrays;
 //import java.util.List;
 //
@@ -30,8 +30,8 @@
 //class AppleSeparator {
 //    // Метод, который разделяет список яблок по весу и возвращает объект класса Apple
 //    public static Apple separationByWeight(List<Apple> allApples) {
-//        List<Apple> stockLightApples = new ArrayList<>();
-//        List<Apple> stockHeavyApples = new ArrayList<>();
+//        List<Apple> stockLightApples = new arrayList<>();
+//        List<Apple> stockHeavyApples = new arrayList<>();
 //        for (Apple apples : allApples) {
 //            if (apples.getWeight() < 150) {
 //                stockLightApples.add(apples);

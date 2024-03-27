@@ -1,7 +1,5 @@
 package multithreading;
 
-import ImportClassToClass.p1.A;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 class AtomicIntegerExample {

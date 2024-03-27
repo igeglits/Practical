@@ -13,7 +13,7 @@ class ProductValidatorImpl implements ProductValidator {
     }
 
     public List<ValidationException> validate(Product product) {
-        List<ValidationException> exceptions = new ArrayList<>();
+        List<ValidationException> exceptions = new arrayList<>();
         try {
             titleValidationRule.validate(product);
         } catch (ValidationException e) {

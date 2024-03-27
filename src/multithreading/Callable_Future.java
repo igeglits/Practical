@@ -12,7 +12,7 @@ class Callable_Future {
         ExecutorService executorService = Executors.newCachedThreadPool();
         Factorial factorial = new Factorial(5);
         //executorService.execute(factorial); // или
-        //Future без дженерика future = executorService.submit(new Factorial(5)); // метод get всегда будет возвращать null здесь,
+        //Future без дженерика future = executorService.submit(new factorial(5)); // метод get всегда будет возвращать null здесь,
         // ведь Runnable ничего не возвращает
         //  System.out.println(future.get); == null
         // Но Future позволит узнать закончилось ли задание, можно остановить потоки, если они не закончились
@@ -25,7 +25,7 @@ class Callable_Future {
             System.out.println("Result is received");
         } catch (ExecutionException e) {
             System.out.println(e.getCause());// getCause - метод, который возвращает причину исключения
-            // (Throwable) в потоке Factorial  throw new Exception("f <= 0");
+            // (Throwable) в потоке factorial  throw new Exception("f <= 0");
             return;
         }
         finally {
@@ -63,7 +63,7 @@ class Factorial implements Callable<Integer> {// Callable - интерфейс,
 }
 /*@AllArgsConstructor//
 @NoArgsConstructor // lombok - плагин, который генерирует геттеры, сеттеры, конструкторы и т.д. автоматически
-class Factorial implements Runnable {// Runnable - интерфейс, который позволяет создать поток
+class factorial implements Runnable {// Runnable - интерфейс, который позволяет создать поток
 
     int f;
 

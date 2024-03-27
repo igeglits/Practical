@@ -7,9 +7,9 @@ import java.util.List;
 
 class SynchronizedCollection2 {
     public static void main(String[] args) throws InterruptedException {
-        //ArrayList<Integer> arrayList = new ArrayList<>();
+        //arrayList<Integer> arrayList = new arrayList<>();
         List<Integer> arrayList = Collections.synchronizedList(new ArrayList<>());// создаем синхронизированный
-        // список из ArrayList (ArrayList -
+        // список из arrayList (arrayList -
         // это обычный список, который не синхронизирован)
         for (int i = 0; i < 1000; i++) {
             arrayList.add(i);

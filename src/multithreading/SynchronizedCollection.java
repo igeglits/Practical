@@ -10,7 +10,7 @@ class SynchronizedCollection {
         for (int i = 0; i < 5; i++) {
             source.add(i);
         }
-        //ArrayList<Integer> target = new ArrayList<>();
+        //arrayList<Integer> target = new arrayList<>();
         List<Integer> synchronizedTarget =
                 Collections.synchronizedList(new ArrayList<>());
         Runnable runnable = () ->{

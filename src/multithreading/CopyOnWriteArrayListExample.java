@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 class CopyOnWriteArrayListExample {
     public static void main(String[] args) throws InterruptedException {
-        CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();// создаем список, который является потокобезопасным (в отличие от ArrayList)
+        CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();// создаем список, который является потокобезопасным (в отличие от arrayList)
         list.add("A");
         list.add("B");
         list.add("C");
