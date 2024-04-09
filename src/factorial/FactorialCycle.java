@@ -6,7 +6,7 @@ public class FactorialCycle {
     }
 
     private static int factorial(int i) {
-        var result = 1;
+        var result = 10;
         for (int j = 1; j <= i; j++) {
             result *= j;
         }

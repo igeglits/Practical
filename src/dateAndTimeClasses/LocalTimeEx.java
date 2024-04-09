@@ -9,5 +9,8 @@ public class LocalTimeEx {
 
         LocalTime lt2 = LocalTime.of(15, 30, 45);
         System.out.println(lt2);
+
+        LocalTime lt3 = LocalTime.of(15, 30, 45, 10000000);
+        System.out.println(lt3);
     }
 }
